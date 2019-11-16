@@ -1,0 +1,47 @@
+doctype html
+html
+  include ../structure/head.pug
+  body
+    include ../structure/header.pug
+    .columns.is-mobile
+      .column
+      .column
+        if error
+          p.has-text-danger #{error}
+        if method == 'PATCH'
+          form(action='/users/'+user.id+'?_method=PATCH', method='post')
+            label.label Prénom
+              .control
+                input(name="firstname", cols="30", rows="10", type="text", value=user.firstname).input
+            label.label Nom
+              .control
+                input(name="lastname", cols="30", rows="10", type="text", value=user.lastname).input
+            label.label Username
+              .control
+                input(name="username", cols="30", rows="10", type="text" value=user.username).input
+            label.label Mot de passe
+              .control
+                input(name="password", cols="30", rows="10", type="password").input
+            label.label E-mail
+              .control
+                input(name="email", cols="30", rows="10", type="email", value=user.email).input
+            input(type='submit', value='Valider').button.is-success
+        else
+          form(action='/users', method='post')
+            label.label Prénom
+              .control
+                input(name="firstname", cols="30", rows="10", type="text").input
+            label.label Nom
+              .control
+                input(name="lastname", cols="30", rows="10", type="text").input
+            label.label Username
+              .control
+                input(name="username", cols="30", rows="10", type="text").input
+            label.label Mot de passe
+              .control
+                input(name="password", cols="30", rows="10", type="password").input
+            label.label E-mail
+              .control
+                input(name="email", cols="30", rows="10", type="email").input
+            input(type='submit', value='Valider').button.is-success
+      .column

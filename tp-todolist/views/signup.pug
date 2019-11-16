@@ -1,0 +1,27 @@
+doctype html
+html
+  include structure/head.pug
+  body
+    .columns.is-mobile
+        .column
+        .column
+            if error
+                p.has-text-danger #{error}
+            form(action='signup', method='post')
+                label.label Username
+                .control
+                    input(name="username", cols="30", rows="10", type="text").input
+                label.label Mot de passe
+                .control
+                    input(name="password", cols="30", rows="10", type="password").input
+                label.label Prénom
+                .control
+                    input(name="firstname", cols="30", rows="10", type="text").input
+                label.label Nom
+                .control
+                    input(name="lastname", cols="30", rows="10", type="text").input
+                label.label E-mail
+                .control
+                    input(name="email", cols="30", rows="10", type="email").input
+                input(type='submit', value='Valider').button.is-success
+        .column

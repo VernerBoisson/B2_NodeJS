@@ -1,0 +1,30 @@
+doctype html
+html
+  include ../structure/head.pug
+  body
+    include ../structure/header.pug
+    .columns.is-mobile
+      .column
+      .column
+        if method == 'PATCH'
+          form(action='/todos/'+todo.id+'?_method=PATCH', method='post')
+            label.label Message
+              .control
+                textarea(class="todo" name="message", cols="30", rows="10").textarea.has-fixed-size #{todo.message}
+            label.label Terminer  
+              .checkbox
+                if todo.completion 
+                  input(type='checkbox', name='completion', checked)
+                else
+                  input(type='checkbox', name='completion')
+            input(type='submit', value='Valider').button.is-success
+        else
+          form(action='/todos', method='post')
+            label.label Message
+              .control
+                textarea(class="todo" name="message", cols="30", rows="10").textarea.has-fixed-size
+            label.label Terminer  
+              .checkbox
+                input(type='checkbox', name='completion')
+            input(type='submit', value='Valider').button.is-success
+      .column

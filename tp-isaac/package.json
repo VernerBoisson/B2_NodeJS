@@ -1,0 +1,29 @@
+{
+  "name": "isaac",
+  "version": "1.0.0",
+  "description": "Nous avions pour projet en cours de NodeJS de créer un script nous permettant de récupérer des informations à partir d'une API et de proposer un certain nombre de fonctionnalité grâce aux données récupérées, tout ça ce passe dans un terminal.",
+  "main": "isaac.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoinenicolleau/TPISAAC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoinenicolleau/TPISAAC/issues"
+  },
+  "homepage": "https://github.com/antoinenicolleau/TPISAAC#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "commander": "^2.19.0",
+    "console-png": "^1.2.1",
+    "file-system": "^2.2.2",
+    "images-downloader": "^1.0.3",
+    "inquirer": "^6.2.0",
+    "rimraf": "^2.6.2",
+    "sqlite3": "^4.0.4"
+  }
+}

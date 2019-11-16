@@ -1,0 +1,34 @@
+doctype html
+html
+  include ../structure/head.pug
+  body
+    include ../structure/header.pug
+    .columns.is-mobile
+        .column
+            table#table.table.is-striped.is-fullwidth
+                thead
+                    th Id
+                    th Prénom
+                    th Nom
+                    th Utilisateur
+                    th email
+                    th Date d'update
+                    th Date de création
+                    th(colspan="3")
+                tbody                    
+                each user in users
+                    tr
+                        td= user.id
+                        td= user.firstname
+                        td= user.lastname
+                        td= user.username
+                        td= user.email
+                        td= user.update_at
+                        td= user.created_at
+                        td
+                            a(href='/users/'+user.id).button.is-info Afficher
+                        td
+                            a(href='/users/'+user.id+'/edit').button.is-primary Editer
+                        td
+                            form(action='/users/'+user.id+'?_method=DELETE', method='post')
+                                input(type='submit', value='Supprimer').button.is-danger

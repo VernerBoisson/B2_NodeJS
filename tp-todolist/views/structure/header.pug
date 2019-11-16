@@ -1,0 +1,13 @@
+header
+  .columns
+    .column
+      h1.title.has-text-centered TP Todolist
+      nav
+        a(href='/todos/add').button Ajouter une Todo
+          i(style='margin-left:4px;').fas.fa-plus-square
+        a(href='/').button Afficher tous les Todos
+        a(href='/users/add').button Ajouter un Utilisateur
+          i(style='margin-left:4px;').fas.fa-plus-square
+        a(href='/users').button Afficher tous les Utilisateurs
+        form(action='/sessions?_method=DELETE', method='post')
+          input(type='submit', value='Déconnexion').button.is-danger

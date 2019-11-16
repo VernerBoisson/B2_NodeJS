@@ -1,0 +1,24 @@
+doctype html
+html
+  include ../structure/head.pug
+  body
+    include ../structure/header.pug
+    .columns.is-mobile
+      .column
+      .column
+        .label Prénom :
+        p.is-size-4 #{user.firstname}
+        .label Nom :
+        p.is-size-4 #{user.lastname}
+        .label Nom d'utilisateur :
+        p.is-size-4 #{user.username}
+        .label Mot de Passe :
+        p.is-size-4 #{user.password}
+        .label E-mail :
+        p.is-size-4 #{user.email}
+        .label Crée le :
+        p.is-size-4 #{user.created_at}
+        .label Mis à jour le :
+        p.is-size-4 #{user.update_at}
+        a(href='/users/'+user.id+'/todos').button.is-info Todos
+      .column

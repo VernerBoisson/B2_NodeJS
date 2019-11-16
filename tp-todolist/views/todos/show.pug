@@ -1,0 +1,20 @@
+doctype html
+html
+  include ../structure/head.pug
+  body
+    include ../structure/header.pug
+    .columns.is-mobile
+      .column
+      .column
+        .label Message :
+        p.is-size-4 #{todo.message}
+        .label Completion :
+        if todo.completion
+          p.is-size-4 Fait
+        else
+          p.is-size-4 En cours
+        .label Crée le :
+        p.is-size-4 #{todo.created_at}
+        .label Mis à jour le :
+        p.is-size-4 #{todo.update_at}
+      .column
